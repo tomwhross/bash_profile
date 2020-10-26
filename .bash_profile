@@ -1,5 +1,7 @@
 # pyenv
-eval "$(pyenv init -)"
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
 
 # bash autocomplete config
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
