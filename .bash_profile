@@ -5,6 +5,7 @@ fi
 
 # bash autocomplete config
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
+[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
 
 # Maven (mvn) config
 export M2_HOME=/usr/local/Cellar/maven/3.6.2/libexec
@@ -25,7 +26,7 @@ function mcd () {
 }
 
 # c docker stuff
-
+# a lot of this can be ignored and deprecated, probably
 function crun(){
     docker run --rm -v "$PWD":/usr/src/myapp -w /usr/src/myapp vulture/gcc-valgrind-cunit /usr/src/myapp/"$1"
 }
